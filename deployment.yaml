@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: stefanruci/my-conc-app:1.0
+          image: test-ecr/my-conc-app:1.0
           ports:
             - containerPort: 8080
