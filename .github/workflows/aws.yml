@@ -36,7 +36,7 @@ env:
   ECS_SERVICE: go-app-service                 # set this to your Amazon ECS service name
   ECS_CLUSTER: ls-test-cluster                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: arn:aws:ecs:eu-west-2:593635309133:task-definition/eks-task-def:1  # set this to the path to your Amazon ECS task definition
-  IMAGE_TAG: my-conc-app:1.0                                            # file, e.g. .aws/task-definition.json
+  IMAGE_TAG: my-conc-app                                            # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: mygoapp           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
