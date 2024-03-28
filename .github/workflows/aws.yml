@@ -35,7 +35,7 @@ env:
   ECR_REPOSITORY: test-ecr           # set this to your Amazon ECR repository name
   ECS_SERVICE: go-app-service                 # set this to your Amazon ECS service name
   ECS_CLUSTER: ls-test-cluster                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: eks-task-def # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: eks-task-def:1 # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: my-conc-app:latest           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
