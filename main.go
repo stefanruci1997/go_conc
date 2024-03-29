@@ -13,8 +13,7 @@ import (
 )
 
 const (
-	port := os.Getenv("PORT")
-	ServerAddress = "localhost:" + port
+ServerAddress = "0.0.0.0:8080"
 	FilesDir      = "./files"
 )
 
@@ -44,13 +43,10 @@ type WordCount struct {
 type WordCountMap map[string]WordCount
 
 func init() {
-	if port == "" {
-		port = "8080"
-	}
-	ServerAddress = "localhost:" + port
-
 	wordSearches = make(map[string]int)
 }
+
+
 
 func main() {
 	router := setupRouter()
