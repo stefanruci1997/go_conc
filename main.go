@@ -46,6 +46,8 @@ func init() {
 	wordSearches = make(map[string]int)
 }
 
+
+
 func main() {
 	router := setupRouter()
 	err := http.ListenAndServe(ServerAddress, router)
