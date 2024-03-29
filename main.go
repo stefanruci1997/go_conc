@@ -2,13 +2,14 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
 	"sync"
+
+	"github.com/gorilla/mux"
 )
 
 const (
@@ -57,9 +58,21 @@ func setupRouter() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
 	router.Use(incrementRequestCounter)
 	router.HandleFunc("/search", searchHandler).Methods("POST")
+	router.HandleFunc("/", wellcome).Methods("GET")
+
 	return router
 }
 
+func wellcome(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Content-Type", "application/json")
+
+	err := json.NewEncoder(w).Encode("wellcome")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+}
 func searchHandler(w http.ResponseWriter, r *http.Request) {
 	err := json.NewDecoder(r.Body).Decode(&words)
 	if err != nil {
