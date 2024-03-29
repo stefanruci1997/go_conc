@@ -35,6 +35,7 @@ func Test_searchHandler(t *testing.T) {
 			TotalSearches: 1,
 		},
 	}
+
 	reqBody, err := json.Marshal(words)
 	if err != nil {
 		t.Fatalf("Failed to marshal request body: %v", err)
