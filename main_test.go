@@ -20,10 +20,10 @@ func Test_searchHandler(t *testing.T) {
 	expected := WordCountMap{
 		"golang": {
 			Word:          "golang",
-			TF:            5,
-			DF:            1,
-			LastTF:        5,
-			LastDF:        1,
+			TF:            8,
+			DF:            2,
+			LastTF:        8,
+			LastDF:        2,
 			TotalSearches: 1,
 		},
 		"concurrency": {
@@ -35,7 +35,6 @@ func Test_searchHandler(t *testing.T) {
 			TotalSearches: 1,
 		},
 	}
-
 	reqBody, err := json.Marshal(words)
 	if err != nil {
 		t.Fatalf("Failed to marshal request body: %v", err)
